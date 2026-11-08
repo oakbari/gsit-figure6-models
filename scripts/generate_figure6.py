@@ -101,24 +101,22 @@ for target,cc in [(.5,.135),(.75,.5)]:
     B.path(c,1-target-target/(10*c))
     text(B.X(cc),B.Y(1-target-target/(10*cc))+3,f'{int(100*target)}%',6.5,col='#FFFFFF')
 
-C=Ax(51,67,'C','Ratio for 90% adult suppression','Illustrative R0 = 4; no immigration',(0,.4),'Relative fertility f (%)')
-C.heat(lambda c,f:population_threshold(c,f,4,.1),'C',True)
-C.axes([(v,f'{100*v:g}') for v in [0,.1,.2,.3,.4]]);bar(C,True)
-boundary=1/3.7
-line(C.x,C.Y(boundary),C.x+C.w,C.Y(boundary),'#FFFFFF',.8,[3,2])
-text(C.x+C.w/2,C.Y(.35),'No finite release ratio',6.8,'middle',col='#45494D')
-for ratio,cc in [(10,.65),(50,.38)]:
-    ff=(1-2.7/(ratio*c))/3.7;C.path(c,ff,[2,1])
-    point=(1-2.7/(ratio*cc))/3.7
-    text(C.X(cc),C.Y(point)+3,f'r = {ratio}',6,col='#FFFFFF')
+C=Ax(51,67,'C','Ratio for 99% adult suppression','Illustrative R0 = 4; no immigration',(0,.01),'Fully fertile release males (%)')
+C.heat(lambda c,f:population_threshold(c,f,4,.01),'C',True)
+C.axes([(v,f'{100*v:g}') for v in [0,.002,.004,.006,.008,.01]]);bar(C,True)
+for ratio,flabel in [(10,.0065),(50,.0025)]:
+    ff=np.linspace(0,.01,300)
+    curve_c=2.97/(ratio*(1-3.97*ff));C.path(curve_c,ff,[2,1])
+    cc=2.97/(ratio*(1-3.97*flabel))
+    text(C.X(cc)+2,C.Y(flabel),f'r = {ratio}:1',6,col='#FFFFFF')
 
-E=Ax(316,67,'D','Effect of population growth','90% adult suppression; complete sterility',(2,10),'Low-density daughter multiplier R0')
-E.heat(lambda c,R0:population_threshold(c,0,R0,.1),'D',True)
+E=Ax(316,67,'D','Effect of population growth','99% adult suppression; complete sterility',(2,10),'Low-density daughter multiplier R0')
+E.heat(lambda c,R0:population_threshold(c,0,R0,.01),'D',True)
 E.axes([(v,str(v)) for v in [2,4,6,8,10]]);bar(E,True)
 for ratio,cc in [(5,.7),(10,.65),(20,.3)]:
-    E.path(c,1+ratio*c/.9,[2,1])
-    point=1+ratio*cc/.9
-    if 2<point<10:text(E.X(cc),E.Y(point)+3,f'r = {ratio}',6,col='#FFFFFF')
+    E.path(c,1+ratio*c/.99,[2,1])
+    point=1+ratio*cc/.99
+    if 2<point<10:text(E.X(cc),E.Y(point)+3,f'r = {ratio}:1',6,col='#FFFFFF')
 
 text(51,17,'A–B: reproductive output in one cohort. C–D: equilibrium population model with maintained effective male ratios.',6.4,col='#50555A')
 text(51,6,'All parameters are illustrative. Population panels assume no immigration and do not establish extinction or field release schedules.',6.4,col='#50555A')
@@ -128,7 +126,7 @@ pdf=pdfium.PdfDocument(str(ROOT/'Figure_6.pdf'));page=pdf[0]
 page.render(scale=600/72).to_pil().save(ROOT/'Figure_6.png')
 page.render(scale=140/72).to_pil().save(ROOT/'Figure_6_preview.png')
 
-assert np.isclose(population_threshold(.5,0,4,.1),5.4)
-assert np.isclose(population_threshold(.5,0,10,.1),16.2)
-assert np.isinf(population_threshold(.5,1/3.7,4,.1))
+assert np.isclose(population_threshold(.5,0,4,.01),5.94)
+assert np.isclose(population_threshold(.5,0,10,.01),17.82)
+assert np.isinf(population_threshold(.5,1/3.97,4,.01))
 print('Created recommended four-panel Figure 6; analytic target checks passed')
