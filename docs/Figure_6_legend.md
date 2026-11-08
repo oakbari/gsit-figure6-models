@@ -44,3 +44,5 @@ C–D describe deterministic population equilibria; none estimates extinction
 probability, field efficacy, release frequency or factory throughput.
 
 In panel C, f is interpreted as the fraction of fully fertile males in the final release cohort; all other released males are completely sterile. Fertile contaminants are assumed to have wild-type fertility and the same mating competitiveness as sterile released males. Under these assumptions, f equals mean relative fertility following a released-male mating. It is distinct from the parental sorting-error rate.
+
+The row headings distinguish reproductive effects within one cohort (A–B) from modeled equilibrium adult-population suppression (C–D). The outlined white point in C marks c = 0.5 and 1% fully fertile contamination, for which the analytic requirement is approximately 6.19:1 at R0 = 4. Across the displayed 0–1% range, the required ratio is more sensitive to competitiveness than to contamination under the stated equal-competitiveness assumption. Panel B retains a broader 0–20% relative-fertility range.
