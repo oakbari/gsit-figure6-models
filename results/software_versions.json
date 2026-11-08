@@ -1,0 +1,10 @@
+{
+  "python": "3.12.14",
+  "packages": {
+    "numpy": "2.3.5",
+    "reportlab": "4.4.9",
+    "pypdfium2": "5.14.0"
+  },
+  "validation": "four numerical references; rtol=atol=1e-10",
+  "analysis": "generic parameter sweeps; no empirical calibration"
+}

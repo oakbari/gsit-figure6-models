@@ -1,0 +1,46 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\title{Equations for four-panel Figure 6}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+\section*{Reproductive output in panels A and B}
+Let $c\geq0$ denote relative released-male mating competitiveness, $r\geq0$ the released-to-wild male ratio, and $0\leq f\leq1$ relative viable-offspring output following a released-male mating. With random effective mating, one effective mating per female and equal fecundity across mate classes,
+\begin{equation}
+G=\frac{1+crf}{1+cr},\qquad T=1-G=\frac{cr(1-f)}{1+cr}.
+\end{equation}
+For target reproductive reduction $0<T<1$,
+\begin{equation}
+r_T=\frac{T}{c(1-T-f)},\qquad c>0,\quad f<1-T.
+\end{equation}
+There is no finite solution otherwise. Equality at $f=1-T$ permits only asymptotic approach when $c>0$. Panel A varies $c=0$--1 and $r=0$--50 at $f=0$. Panel B varies $c=0$--1 and $f=0$--0.2 at $r=10$.
+
+\section*{Population targets in panels C and D}
+Assume a maintained effective mating ratio $r$, no immigration and constant parameters. Let $R_0>1$ be low-density adult-daughter production per female and $K$ untreated equilibrium female abundance. Use saturating recruitment after reproductive loss:
+\begin{equation}
+F_{t+1}=\frac{R_0GF_t}{1+(R_0-1)GF_t/K}.
+\end{equation}
+For $R_0G>1$, the positive equilibrium is
+\begin{equation}
+\frac{F^*}{K}=\frac{R_0G-1}{(R_0-1)G}.
+\end{equation}
+For $R_0G\leq1$, zero is the only nonnegative equilibrium. For target fraction $0<a<1$, let $H=R_0-a(R_0-1)$. Solving $F^*/K\leq a$ gives
+\begin{equation}
+G\leq\frac{1}{H},\qquad
+r\geq r_a=\frac{H-1}{c(1-Hf)},\qquad c>0,\quad f<1/H.
+\end{equation}
+Outside these domains no finite ratio achieves the target. Panel C sets $a=0.1$, $R_0=4$, $c=0$--1 and $f=0$--0.4. Here $H=3.7$ and the fertility boundary is $1/3.7\simeq0.27027$. Panel D varies $R_0=2$--10 and $c=0$--1 with $a=0.1$ and $f=0$, giving
+\begin{equation}
+r_{0.1}=\frac{0.9(R_0-1)}{c}.
+\end{equation}
+For example, $c=0.5$, $R_0=4$ and $f=0$ give $r_{0.1}=5.4$; at $R_0=10$ the requirement is 16.2. These are generic model outputs, not empirical release specifications.
+
+\section*{Scope and numerical representation}
+All parameters are illustrative. Relative fertility is not a parental sorting-error rate. It equals a fully fertile contaminant fraction only if both released classes share mating competitiveness and all other released males are completely sterile. Population calculations omit immigration, spatial and age structure, seasonality, dormant eggs, stochasticity and explicit inheritance; descendants are aggregated as fertile residents. Equilibrium suppression does not establish extinction, release frequency or required production throughput.
+
+Each panel uses a 100 by 100 cell-centered grid. Contours and feasibility boundaries are analytic. Exact endpoints such as $c=0$ are defined by the equations, not sampled as grid cells. Finite ratio colors saturate at $\leq1$ and $\geq1000$ but CSV values remain uncapped. Numeric feasibility margins within eight machine epsilons of zero are treated as exactly on the boundary.
+
+The framework is introduced and derived in the ngSIT manuscript and in this document; final manuscript bibliographic details will be supplied by the authors. Saturating recruitment is Beverton--Holt-type; see \emph{On the Dynamics of Exploited Fish Populations}, reprint DOI 10.1007/978-94-011-2106-4. No empirical parameters were transferred from that source.
+\end{document}
