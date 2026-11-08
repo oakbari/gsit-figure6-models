@@ -2,7 +2,7 @@
 
 Public repository: [https://github.com/oakbari/gsit-figure6-models](https://github.com/oakbari/gsit-figure6-models).
 
-1. Extract the archive and upload the **contents** of `ngsit-figure6-annotated` to
+1. Extract the archive and upload the **contents** of `ngsit-figure6-clear-labels` to
    the intended GitHub repository, preserving the directories. Uploading just
    the ZIP does not expose its contents as a normal source repository.
 2. Add approved author names, the manuscript citation, repository
@@ -30,4 +30,6 @@ Do not replace those placeholders with unverified repository or archive URLs.
 
 This version targets 99% equilibrium adult-female suppression in panels C and D. Panel C displays 0–1% fully fertile contamination of the final release cohort, assuming equal mating competitiveness of fertile and sterile released males.
 
-This presentation revision adds panel questions, outcome row labels, explicit ratio tick labels and a marked 6.19:1 example.
+This presentation revision uses larger labels, shortened panel titles, explicit ratio tick labels, a marked 6.19:1 example and contour labels positioned clear of the lines. Panel questions are explained in the legend.
+
+

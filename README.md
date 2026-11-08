@@ -24,9 +24,9 @@ The last command runs eight tests, including 1,000 randomized adult-target
 checks, regenerates Figure 6, and compares all four numerical grids with saved
 references. Outputs appear in `results/`:
 
-- `Figure_6.pdf`: vector artwork, 705 × 610 points.
+- `Figure_6.pdf`: vector artwork, 705 × 550 points.
 - `Figure_6.svg`: editable vector artwork.
-- `Figure_6.png`: 600 dpi raster artwork, approximately 9.79 × 8.47 inches.
+- `Figure_6.png`: 600 dpi raster artwork, approximately 9.79 × 7.64 inches.
 - `selected_panel_A.csv` through `selected_panel_D.csv`: generated model values.
 - `software_versions.json`: software versions used for the run.
 
@@ -138,4 +138,6 @@ to be added. This repository does not assign a software license.
 
 Panel C uses a mixture interpretation: f is the fully fertile fraction of the final release cohort. Remaining released males are completely sterile. Both released classes have equal mating competitiveness, and fertile contaminants have wild-type fertility. No empirical contamination rate is assumed.
 
-This presentation revision adds explanatory panel questions, row headings, explicit ratio color-bar ticks and a marked analytic example in panel C. The model and all four numerical grids are unchanged.
+This presentation revision uses short panel titles, explicit ratio color-bar ticks and a marked analytic example in panel C. The legend explains the question answered by each panel. The model and all four numerical grids are unchanged.
+
+Readable artwork revision: shortened titles and example callout; larger axis, tick and contour labels. Assumptions and interpretation are retained in the legend rather than figure footnotes. Numerical grids are unchanged.
